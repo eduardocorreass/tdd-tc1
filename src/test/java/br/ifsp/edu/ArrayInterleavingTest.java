@@ -32,4 +32,17 @@ public class ArrayInterleavingTest {
 
         assertArrayEquals(expectedResult, arrayInterleaving.interleave(a, b));
     }
+
+    @Test
+    @DisplayName("Should result in an interleaved array")
+    public void ShouldResultInAnInterleavedArray(){
+        ArrayInterleaving arrayInterleaving = new ArrayInterleaving();
+
+        int[] a = {1,3,5,7};
+        int[] b = {2,4,6,8};
+
+        int[] expectedResult = {1,2,3,4,5,6,7,8};
+
+        assertArrayEquals(expectedResult, arrayInterleaving.interleave(a, b));
+    }
 }
