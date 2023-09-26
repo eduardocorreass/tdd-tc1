@@ -12,12 +12,13 @@ public class ArrayInterleavingTest {
     public void ShouldResultEmptyInArrayInterleaving(){
         ArrayInterleaving arrayInterleaving = new ArrayInterleaving();
 
+        int n = 0;
         int[] a = {};
         int[] b = {};
 
         int[] expectedResult = {};
 
-        assertArrayEquals(expectedResult, arrayInterleaving.interleave(a, b));
+        assertArrayEquals(expectedResult, arrayInterleaving.interleave(a, b, n));
     }
 
     @Test
@@ -25,12 +26,13 @@ public class ArrayInterleavingTest {
     public void ShouldResultInABArrayIfNIsEqualToOne(){
         ArrayInterleaving arrayInterleaving = new ArrayInterleaving();
 
+        int n = 1;
         int[] a = {3};
         int[] b = {5};
 
         int[] expectedResult = {3, 5};
 
-        assertArrayEquals(expectedResult, arrayInterleaving.interleave(a, b));
+        assertArrayEquals(expectedResult, arrayInterleaving.interleave(a, b, n));
     }
 
     @Test
@@ -38,11 +40,12 @@ public class ArrayInterleavingTest {
     public void ShouldResultInAnInterleavedArray(){
         ArrayInterleaving arrayInterleaving = new ArrayInterleaving();
 
+        int n = 4;
         int[] a = {1,3,5,7};
         int[] b = {2,4,6,8};
 
         int[] expectedResult = {1,2,3,4,5,6,7,8};
 
-        assertArrayEquals(expectedResult, arrayInterleaving.interleave(a, b));
+        assertArrayEquals(expectedResult, arrayInterleaving.interleave(a, b, n));
     }
 }
