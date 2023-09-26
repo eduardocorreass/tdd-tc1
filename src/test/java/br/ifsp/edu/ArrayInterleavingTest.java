@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertThrows;
 
 public class ArrayInterleavingTest {
     @Test
@@ -47,5 +48,19 @@ public class ArrayInterleavingTest {
         int[] expectedResult = {1,2,3,4,5,6,7,8};
 
         assertArrayEquals(expectedResult, arrayInterleaving.interleave(a, b, n));
+    }
+
+    @Test
+    @DisplayName("Should result in Exception if N is less than zero")
+    public void ShouldResultInExceptionIfNIsLessThanZero(){
+        ArrayInterleaving arrayInterleaving = new ArrayInterleaving();
+
+        int n = -1;
+        int[] a = {};
+        int[] b = {};
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            arrayInterleaving.interleave(a, b, n);
+        });
     }
 }
