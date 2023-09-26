@@ -63,4 +63,18 @@ public class ArrayInterleavingTest {
             arrayInterleaving.interleave(a, b, n);
         });
     }
+
+    @Test
+    @DisplayName("Should result in Exception if lengths are not equal")
+    public void ShouldResultInExceptionIfLengthsAreNotEqual(){
+        ArrayInterleaving arrayInterleaving = new ArrayInterleaving();
+
+        int n = 3;
+        int[] a = {1,2,3};
+        int[] b = {7,8};
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            arrayInterleaving.interleave(a, b, n);
+        });
+    }
 }
